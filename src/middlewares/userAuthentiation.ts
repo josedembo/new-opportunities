@@ -12,11 +12,9 @@ interface ItokenPayload {
 }
 
 interface IUser {
-
     id: string;
     name: string;
     email: string
-
 }
 
 function userAuthentication(request: Request, response: Response, next: NextFunction) {
