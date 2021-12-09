@@ -24,7 +24,7 @@ function userAuthentication(request: Request, response: Response, next: NextFunc
     const authHeader = request.headers.authorization;
 
     if (!authHeader) {
-        throw new AppError("anouthorizad", 401);
+        throw new AppError("Unauthorised", 401);
     }
 
     const [, token] = authHeader.split(" ");
