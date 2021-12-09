@@ -13,7 +13,7 @@ import { User } from "./User"
 @Entity()
 class Post {
 
-    @PrimaryGeneratedColumn()
+    @PrimaryGeneratedColumn("uuid")
     id: string;
 
     @Column()

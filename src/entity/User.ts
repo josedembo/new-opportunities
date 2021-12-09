@@ -7,7 +7,7 @@ import {
 @Entity()
 class User {
 
-    @PrimaryGeneratedColumn()
+    @PrimaryGeneratedColumn("uuid")
     id: string;
 
     @Column()

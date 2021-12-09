@@ -1,4 +1,4 @@
-import { Request, Response } from "express";
+import { request, Request, Response } from "express";
 import { UserService } from "./UserService";
 
 class UserController {
@@ -8,9 +8,15 @@ class UserController {
         const service = new UserService()
     }
 
-    async signUp(resquest: Request, response: Response) {
+    async signUp(request: Request, response: Response) {
+
+        const { name, email, password } = request.body;
 
         const service = new UserService()
+
+        const user = await service.signUp({ name, email, password });
+
+        return response.status(200).json(user);
     }
 
     async getUser(resquest: Request, response: Response) {
@@ -19,3 +25,5 @@ class UserController {
 
     }
 }
+
+export { UserController }
