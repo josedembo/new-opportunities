@@ -1,6 +1,7 @@
 import { getRepository } from "typeorm";
 import { Post } from "../../entity/Post";
 import { User } from "../../entity/User";
+import { AppError } from "../../model/errors/AppErros";
 
 interface IPostRequest {
     type: string
@@ -53,7 +54,26 @@ class PostService {
 
     }
 
-    async updatePost() {
+    async updatePost(post: Partial<Post>, user: Partial<User>, id: string) {
+
+        const postRepository = getRepository(Post);
+
+        const existsPost = await postRepository.find({
+            where: { user: { id: user.id, email: user.email }, id: id },
+            relations: ["user"]
+        });
+
+        if (!existsPost || existsPost.length === 0) {
+            throw new AppError("post not foud");
+        }
+
+        await postRepository.update({ id }, post);
+
+        const postUpdated = await postRepository.find({
+            where: { user: { id: user.id, email: user.email }, id: id }
+        });
+
+        return postUpdated;
 
     }
 }

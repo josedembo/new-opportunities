@@ -39,7 +39,18 @@ class PostController {
 
     }
 
-    async updatePost() {
+    async updatePost(request: Request, response: Response) {
+
+        const { id } = request.params;
+        const post = request.body;
+
+        const user = request.user;
+
+        const service = new PostService();
+
+        const allPosts = await service.updatePost(post, user, id);
+
+        return response.status(200).json(allPosts);
 
     }
 

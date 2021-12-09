@@ -11,7 +11,7 @@ postRoutes.use(userAuthentication);
 
 postRoutes.post("/", postController.createPost);
 
-postRoutes.put("/", postController.updatePost)
+postRoutes.put("/:id", postController.updatePost)
 
 postRoutes.get("/my", postController.getMyPosts);
 

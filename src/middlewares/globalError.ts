@@ -12,6 +12,7 @@ function globalErrorHandle(err: Error, request: Request, response: Response, nex
         });
     }
 
+    console.log(err)
     return response.status(500).json({
         status: "error",
 
