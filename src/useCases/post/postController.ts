@@ -27,7 +27,15 @@ class PostController {
         return response.status(200).json(posts);
     }
 
-    async getAllPosts() {
+    async getAllPosts(request: Request, response: Response) {
+
+        const user = request.user;
+
+        const service = new PostService();
+
+        const allPosts = await service.getAllPosts();
+
+        return response.status(200).json(allPosts);
 
     }
 

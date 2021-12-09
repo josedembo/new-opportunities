@@ -44,6 +44,13 @@ class PostService {
 
     async getAllPosts() {
 
+        const postRepository = getRepository(Post);
+
+        const posts = await postRepository.find({ relations: ['user'] });
+
+
+        return posts;
+
     }
 
     async updatePost() {
