@@ -7,6 +7,8 @@ const userController = new UserController();
 
 userRoutes.post("/signUp", userController.signUp);
 
+userRoutes.post("/signIn", userController.signIn)
+
 
 
 export { userRoutes }
