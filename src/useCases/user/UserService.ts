@@ -1,5 +1,6 @@
 import { getRepository } from 'typeorm';
 import { User } from '../../entity/User';
+import { AppError } from '../../model/errors/AppErros';
 import { UserSignInDTO } from './dtos/UserSignIn';
 import { UserSignUpDTO } from './dtos/UserSignUp';
 
@@ -19,7 +20,7 @@ class UserService {
         const existUser = await userRepository.findOne({ where: { email: user.email } });
 
         if (existUser) {
-            throw new Error("user already exists");
+            throw new AppError("user already exists");
         }
 
         const userCreated = await userRepository.save(user);
