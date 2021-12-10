@@ -5,13 +5,13 @@ import { PostService } from "./postService";
 class PostController {
 
     async createPost(request: Request, response: Response) {
-        const { type, description } = request.body;
+        const { title, type, description } = request.body;
 
         const user = request.user;
 
         const service = new PostService();
 
-        const post = await service.createPost({ type, description }, user);
+        const post = await service.createPost({ title, type, description }, user);
 
         return response.status(201).json(post);
     }

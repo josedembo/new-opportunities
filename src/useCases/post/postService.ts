@@ -7,6 +7,7 @@ import { validate } from "uuid";
 interface IPostRequest {
     type: string
     description: string
+    title: string
 }
 
 interface IUser {
@@ -18,12 +19,13 @@ interface IUser {
 
 class PostService {
 
-    async createPost({ type, description }: IPostRequest, user: Partial<User>) {
+    async createPost({ title, type, description }: IPostRequest, user: Partial<User>) {
 
         const postRepository = getRepository(Post);
 
         const postData = {
             user,
+            title,
             type,
             description
         }
