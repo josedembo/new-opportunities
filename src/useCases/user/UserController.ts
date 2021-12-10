@@ -16,13 +16,13 @@ class UserController {
 
     async signUp(request: Request, response: Response) {
 
-        const { name, email, password } = request.body;
+        const { name, username, email, password } = request.body;
 
         const service = new UserService()
 
-        const user = await service.signUp({ name, email, password });
+        const user = await service.signUp({ name, username, email, password });
 
-        return response.status(200).json(user);
+        return response.status(201).json(user);
     }
 
     async getAll(request: Request, response: Response) {

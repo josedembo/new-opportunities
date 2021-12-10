@@ -76,6 +76,7 @@ class UserService {
 
         const userData = {
             name: user.name,
+            username: user.username,
             email: user.email,
             password: PasswordHash
         }
@@ -104,7 +105,7 @@ class UserService {
 
         const userRepository = getRepository(User);
 
-        const allUsers = await userRepository.find({ select: ["id", "email", "name"] });
+        const allUsers = await userRepository.find({ select: ["id", "email", "name", "username"] });
 
         return allUsers;
     }
