@@ -4,7 +4,11 @@ import { AppError } from '../../model/errors/AppErros';
 import { UserSignInDTO } from './dtos/UserSignIn';
 import { UserSignUpDTO } from './dtos/UserSignUp';
 import { sign } from "jsonwebtoken";
+import { config } from 'dotenv';
+import cryptoJs from "crypto-js";
 import Jwtonfig from "../../config/auth";
+
+config();
 
 interface IUser {
     email: string,
@@ -24,7 +28,9 @@ class UserService {
             throw new AppError("user not found");
         }
 
-        if (password !== existsUser.password) {
+        const PasswordHash = cryptoJs.MD5(password).toString();
+
+        if (PasswordHash !== existsUser.password) {
             throw new AppError("user or password not match", 401);
         }
 
@@ -59,7 +65,15 @@ class UserService {
             throw new AppError("user already exists");
         }
 
-        const userCreated = await userRepository.save(user);
+        const PasswordHash = cryptoJs.MD5(user.password).toString();
+
+        const userData = {
+            name: user.name,
+            email: user.email,
+            password: PasswordHash
+        }
+
+        const userCreated = await userRepository.save(userData);
 
 
         const { secret, expiresIn } = Jwtonfig.jwt;
