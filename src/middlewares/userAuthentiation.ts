@@ -2,6 +2,8 @@ import { NextFunction, Request, Response } from "express";
 import { AppError } from "../model/errors/AppErros";
 import { verify } from "jsonwebtoken";
 import jwtConfig from "../config/auth";
+import { getRepository } from "typeorm";
+import { User } from "../entity/User"
 
 interface ItokenPayload {
     name: string;
@@ -17,7 +19,7 @@ interface IUser {
     email: string
 }
 
-function userAuthentication(request: Request, response: Response, next: NextFunction) {
+async function userAuthentication(request: Request, response: Response, next: NextFunction) {
 
     const authHeader = request.headers.authorization;
 
@@ -40,6 +42,14 @@ function userAuthentication(request: Request, response: Response, next: NextFunc
             id: sub,
             name,
             email
+        }
+
+        const userRepository = getRepository(User);
+
+        const verifyIfUserExists = await userRepository.find({ where: { id: user.id } });
+
+        if (verifyIfUserExists.length === 0) {
+            throw new AppError("Unauthorised");
         }
 
         request.user = user;

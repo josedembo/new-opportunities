@@ -48,6 +48,18 @@ class UserController {
         return response.status(201).json(userUpdated);
 
     }
+
+    async delete(request: Request, response: Response) {
+        const { id } = request.params;
+        const user = request.user;
+
+        const service = new UserService()
+
+        const deleteResult = await service.deleteUser(id, user);
+
+        return response.status(200).json(deleteResult);
+
+    }
 }
 
 export { UserController }

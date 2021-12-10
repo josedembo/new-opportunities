@@ -137,6 +137,33 @@ class UserService {
 
     }
 
+    async deleteUser(id: string, user: Partial<User>) {
+        const usertRepository = getRepository(User);
+
+        const verifyIfIsUuid = validate(id);
+
+        if (!verifyIfIsUuid) {
+            throw new AppError("bad Request, invalid Id");
+        }
+
+        const verfyIfIdIsEqualUserId = id === user.id;
+
+        if (!verfyIfIdIsEqualUserId) {
+            throw new AppError("bad Request, only ther user can delete her data");
+        }
+
+
+        const existsUser = usertRepository.find({ where: { id } });
+
+        if (!existsUser) {
+            throw new AppError("user not found");
+        }
+
+        const result = await usertRepository.delete({ id });
+
+        return result;
+    }
+
 }
 
 

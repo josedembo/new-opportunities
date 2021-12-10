@@ -10,6 +10,7 @@ userRoutes.post("/signUp", userController.signUp);
 userRoutes.post("/signIn", userController.signIn);
 userRoutes.get("/", userAuthentication, userController.getAll);
 userRoutes.put("/:id", userAuthentication, userController.update);
+userRoutes.delete("/:id", userAuthentication, userController.delete);
 
 
 
