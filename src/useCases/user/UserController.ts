@@ -25,9 +25,13 @@ class UserController {
         return response.status(200).json(user);
     }
 
-    async getUser(request: Request, response: Response) {
+    async getAllUsers(request: Request, response: Response) {
 
         const service = new UserService()
+
+        const allUsers = await service.getAllUsers();
+
+        return response.status(200).json(allUsers);
 
     }
 }

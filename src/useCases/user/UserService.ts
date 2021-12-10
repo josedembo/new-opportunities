@@ -79,9 +79,16 @@ class UserService {
 
     }
 
-    async getUser() {
+    async getAllUsers() {
 
+        const userRepository = getRepository(User);
+
+        const allUsers = await userRepository.find({ select: ["id", "email", "name"] });
+
+        return allUsers;
     }
+
+
 
 }
 
