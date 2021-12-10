@@ -25,13 +25,27 @@ class UserController {
         return response.status(200).json(user);
     }
 
-    async getAllUsers(request: Request, response: Response) {
+    async getAll(request: Request, response: Response) {
 
         const service = new UserService()
 
         const allUsers = await service.getAllUsers();
 
         return response.status(200).json(allUsers);
+
+    }
+
+    async update(request: Request, response: Response) {
+
+        const { id } = request.params;
+        const userData = request.body;
+        const user = request.user
+
+        const service = new UserService()
+
+        const userUpdated = await service.updateUser(id, user, userData);
+
+        return response.status(200).json(userUpdated);
 
     }
 }

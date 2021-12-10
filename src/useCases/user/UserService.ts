@@ -4,6 +4,7 @@ import { AppError } from '../../model/errors/AppErros';
 import { UserSignInDTO } from './dtos/UserSignIn';
 import { UserSignUpDTO } from './dtos/UserSignUp';
 import { sign } from "jsonwebtoken";
+import { validate } from 'uuid';
 import { config } from 'dotenv';
 import cryptoJs from "crypto-js";
 import Jwtonfig from "../../config/auth";
@@ -14,6 +15,12 @@ interface IUser {
     email: string,
     password?: string
 
+}
+
+interface IUserData {
+
+    name: string
+    email: string
 }
 
 class UserService {
@@ -102,7 +109,33 @@ class UserService {
         return allUsers;
     }
 
+    async updateUser(id: string, user: Partial<User>, userData: IUserData) {
 
+        const usertRepository = getRepository(User);
+
+        const verifyIfIsUuid = validate(id);
+
+        if (!verifyIfIsUuid) {
+            throw new AppError("bad Request, invalid Id");
+        }
+
+        const verfyIfIdIsEqualUserId = id === user.id;
+
+        if (!verfyIfIdIsEqualUserId) {
+            throw new AppError("bad Request, only ther user can update her data");
+        }
+
+        const existsUser = usertRepository.find({ where: { id } });
+
+        if (!existsUser) {
+            throw new AppError("user not found");
+        }
+
+        const userUpdated = usertRepository.update(id, userData);
+
+        return userUpdated;
+
+    }
 
 }
 
