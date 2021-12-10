@@ -54,7 +54,18 @@ class PostController {
 
     }
 
-    async deletePost() {
+    async deletePost(request: Request, response: Response) {
+
+        const { id } = request.params;
+
+        const user = request.user;
+
+        const service = new PostService();
+
+        const result = await service.deletePost(user, id);
+
+        return response.status(200).json(result);
+
 
     }
 

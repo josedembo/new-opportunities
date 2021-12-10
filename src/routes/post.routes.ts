@@ -17,7 +17,7 @@ postRoutes.get("/my", postController.getMyPosts);
 
 postRoutes.get("/", postController.getAllPosts)
 
-postRoutes.delete("/", postController.deletePost)
+postRoutes.delete("/:id", postController.deletePost)
 
 
 
