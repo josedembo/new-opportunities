@@ -45,7 +45,7 @@ class UserController {
 
         const userUpdated = await service.updateUser(id, user, userData);
 
-        return response.status(200).json(userUpdated);
+        return response.status(201).json(userUpdated);
 
     }
 }

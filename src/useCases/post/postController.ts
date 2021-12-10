@@ -50,7 +50,7 @@ class PostController {
 
         const allPosts = await service.updatePost(post, user, id);
 
-        return response.status(200).json(allPosts);
+        return response.status(201).json(allPosts);
 
     }
 
