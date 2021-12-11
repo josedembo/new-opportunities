@@ -5,7 +5,7 @@ import { GetAllUserService } from "./GetAllUserService";
 
 class GetAllUserController {
 
-    async handle(request: Request, response: Response) {
+    async handle(request: Request, response: Response): Promise<Response> {
         const service = new GetAllUserService()
 
         const allUsers = await service.execute();
