@@ -25,7 +25,7 @@ class Post {
     @Column()
     description: string
 
-    @ManyToOne(() => User, user => user.id)
+    @ManyToOne(() => User, user => user.id, { onDelete: "CASCADE" })
     @JoinColumn()
     user: User
 
