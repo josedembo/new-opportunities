@@ -6,10 +6,14 @@ import cryptoJs from "crypto-js";
 import Jwtconfig from "../../../config/auth";
 import { sign } from "jsonwebtoken";
 
+interface IReturn {
+    id: string
+    acessToken: string
+}
 
 class SignUpUserService {
 
-    async execute(user: UserSignUpDTO) {
+    async execute(user: UserSignUpDTO): Promise<IReturn> {
 
         const userRepository = getRepository(User);
 
@@ -42,11 +46,10 @@ class SignUpUserService {
         });
 
         return {
-            user: userCreated,
+            id: userCreated.id,
             acessToken: token
         };
     }
-
 
 }
 
