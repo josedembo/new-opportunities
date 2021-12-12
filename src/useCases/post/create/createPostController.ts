@@ -3,7 +3,7 @@ import { CreatePostService } from "./createPostService";
 
 class CreatePostController {
 
-    async handle(request: Request, response: Response) {
+    async handle(request: Request, response: Response): Promise<Response> {
 
         const { title, type, description } = request.body;
 

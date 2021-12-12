@@ -11,7 +11,7 @@ interface IPostRequest {
 
 class CreatePostService {
 
-    async execute({ title, type, description }: IPostRequest, user: Partial<User>) {
+    async execute({ title, type, description }: IPostRequest, user: Partial<User>): Promise<Post> {
         const postRepository = getRepository(Post);
 
         const postData = {
