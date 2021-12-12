@@ -22,6 +22,51 @@ Tabela de conteúdos
    * [Autor](#autor)
 <!--te-->
 
+# Como Rodar o projeto
+
+### Pré-requisitos
+
+Antes de começar a rodar o projeto, você vai precisar instalar em sua máquina as seguintes ferramentas:
+[Git](https://git-scm.com) e [Node.js](https://nodejs.org/en/)
+
+Após isso é recomendável a instalação de um editor de código(caso não tenha), como o [VSCode](https://code.visualstudio.com/)
+
+### dependências
+<!--ts-->
+   * [pacotes](#dependencias)
+      * [express](https://expressjs.com/pt-br/)
+      * [typeorm](https://typeorm.io/#/)
+      * [crypto-js](https://www.npmjs.com/package/crypto-js)
+      * [cors](http://expressjs.com/en/resources/middleware/cors.html)
+      * [dotenv](https://www.npmjs.com/package/dotenv)
+      * [express-async-errors](https://www.npmjs.com/package/express-async-errors)
+      * [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
+      * [pg](https://www.npmjs.com/package/pg)
+      * [uuid](https://www.npmjs.com/package/uuid)
+<!--te-->
+para ver a versões de cada pacote acesse o [package.json](package.json) do projeto
+
+### Rodando o Back End
+
+```bash
+# Clone este repositório
+$ git clone <https://github.com/josedembo/new-opportunities>
+
+# Acesse a pasta do projeto no terminal/cmd
+$ cd new-opportunities
+
+# Instale as dependências(pode usar qualquel uma das opções abaixo)
+$ npm install  
+$ yarn 
+ 
+# Execute a aplicação em modo de desenvolvimento
+$ yarn dev
+$ npm run dev
+
+# O servidor estará rodando  na porta:3333
+# Pode consumir a API usando Insomnia, postman ou qualquer  ferramenta de sua preferência
+```
+
 ## Tecnologias
 As ferramentas abaixo foram usadas para a construção do projeto: 
 
