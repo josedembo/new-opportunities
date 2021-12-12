@@ -5,6 +5,7 @@
 [![GitHub issues](https://img.shields.io/github/issues/josedembo/new-opportunities)](https://github.com/josedembo/new-opportunities/issues)
 [![GitHub forks](https://img.shields.io/github/forks/josedembo/new-opportunities)](https://github.com/josedembo/new-opportunities/network)
 [![GitHub stars](https://img.shields.io/github/stars/josedembo/new-opportunities)](https://github.com/josedembo/new-opportunities/stargazers)
+[![GitHub license](https://img.shields.io/github/license/josedembo/new-opportunities)](https://github.com/josedembo/new-opportunities/blob/main/LICENSE)
 
 O new-opportunities é uma aplicação dedica ao compartilhando de oportunidades na ária de TI através de vários tipos de postagens como, cursos de formação total ou parciamente financiados, oportunidades de emprego, e demais oportunidades da ária de TI.
 
@@ -18,7 +19,7 @@ Tabela de conteúdos
       * [dependecias](#dependecias)
       * [Rodando a aplicação](#rodando-o-back-end)
    * [Tecnologias](#tecnologias)
-   * [new-opportunities API ](#new-opportunities)
+   * [new-opportunities API ](#new-opportunities-API)
    * [Autor](#autor)
 <!--te-->
 
@@ -74,7 +75,79 @@ As ferramentas abaixo foram usadas para a construção do projeto:
 - [x] [Typescript](https://www.typescriptlang.org/)
 - [x] [Docker](https://www.docker.com/)
 - [x] [TypeORM](https://typeorm.io/#/)
-  
+
+## new-opportunities API
+
+## User
+
+##### `POST` `/signUp`
+
+```cURL
+http://localhost:3333/users/signUp
+```
+ Body 
+ ```Json
+{
+	"name":"José Augusto",
+	"username":"joseaugusto12",
+	"email":"joseaugustinho@gmail.com",
+	"password":"jose"
+}
+```
+---
+##### `POST` `/signIn`
+
+```cURL
+http://localhost:3333/users/signIp
+```
+ Body 
+ ```Json
+{
+	"email":"joseaugustinho@gmail.com",
+	"password":"jose"
+}
+```
+---
+##### `PUT` 
+
+```cURL
+http://localhost:3333/users/c23c6e00-c496-4fad-b97d-11d882f92954
+
+```
+
+Authorization  <span style="color:gray"> &ensp;&ensp;&ensp;&ensp;Bearer Token<span>
+
+token &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&lt;toke&gt;
+
+ Body 
+ ```Json
+   "name":"José Augustinho",
+	"email":"augustinho12@hotmail.com",
+}
+```
+ 
+##### <span style="color:green"> GET </span> `getAll`
+
+``` 
+http://localhost:3333/users
+```
+
+Authorization  <span style="color:gray"> &ensp;&ensp;&ensp;&ensp;Bearer Token<span>
+
+token &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&lt;toke&gt;
+
+##### <span style="color:green"> GET </span>  `getOne`
+
+```cURL
+http://localhost:3333/users/c23c6e00-c496-4fad-b97d-11d882f92954
+```
+
+Authorization  <span style="color:gray"> &ensp;&ensp;&ensp;&ensp;Bearer Token<span>
+
+token &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&lt;toke&gt;
+
+
+
 # Autor
 ---
 
