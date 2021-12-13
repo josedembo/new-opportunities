@@ -82,8 +82,11 @@ As ferramentas abaixo foram usadas para a construção do projeto:
 
 ## User
 
+Rotas dos usuarios
+
 ##### `POST` `/signUp`
 
+Cadastra um novo usuario
 ```cURL
 http://localhost:3333/users/signUp
 ```
@@ -98,6 +101,7 @@ http://localhost:3333/users/signUp
 ```
 ---
 ##### `POST` `/signIn`
+Faz login de um usuario
 
 ```cURL
 http://localhost:3333/users/signIp
@@ -111,6 +115,9 @@ http://localhost:3333/users/signIp
 ```
 ---
 ##### `PUT` 
+Actualiza os dados de um  usuario já cadastrado <br/>
+O usuario precisa estar autenticado e informar o seu id
+
 
 ```cURL
 http://localhost:3333/users/c23c6e00-c496-4fad-b97d-11d882f92954
@@ -131,7 +138,10 @@ token &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&l
 ---
 `GET` `/getAll`
 
-``` 
+Retorna os dados de todos os usuarios cadastrados<br/>
+O usuario precisa estar autenticado
+
+```cURL
 http://localhost:3333/users
 ```
 
@@ -142,6 +152,9 @@ token &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&l
 ---
 
 `GET`  `/getOne`
+
+Retorna os dados do usuario logado<br/>
+O usuario precisa estar autenticado e informar o seu id
 
 ```cURL
 http://localhost:3333/users/c23c6e00-c496-4fad-b97d-11d882f92954
@@ -155,7 +168,11 @@ token &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&l
 
 ## Post
 
+Rotas das postagens
+
 ##### `POST` 
+Cria uma nova postagem <br/>
+O usuario precisa estar autenticado
 
 ```cURL
 http://localhost:3333/posts
@@ -175,6 +192,9 @@ token &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&l
 ---
 ##### `PUT` 
 
+Actualiza os dados de uma postagem já existente de um  usuario cadastrado<br/>
+O usuario precisa estar autenticado e informar o id da postagem que pretende actualizar
+
 ```cURL
 http://localhost:3333/posts/810a74a9-2a20-48b7-8af4-dace58076508
 ```
@@ -192,6 +212,10 @@ token &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&l
 ---
 `GET`
 
+Retorna todas as postagens de todos os usuarios<br/>
+O usuario precisa estar autenticado
+
+
 ``` 
 http://localhost:3333/posts
 ```
@@ -203,6 +227,8 @@ token &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&l
 ---
 
 `GET` `/my`
+Retorna todas as postagens de um usuario<br/>
+O usuario precisa estar autenticado
 
 ``` 
 http://localhost:3333/posts/my
