@@ -1,17 +1,12 @@
 import { Router } from "express";
-import { PostController } from "../useCases/post/postController";
 import { userAuthentication } from "../middlewares/userAuthentiation";
-
 import { createPostController } from "../useCases/post/create";
 import { updatePostController } from "../useCases/post/update";
 import { getAllPostsController } from "../useCases/post/getAll";
 import { getMyPostsController } from "../useCases/post/getMy";
 import { deletePostController } from "../useCases/post/delete";
 
-
 const postRoutes = Router();
-
-const postController = new PostController();
 
 postRoutes.use(userAuthentication);
 
