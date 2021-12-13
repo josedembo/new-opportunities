@@ -88,7 +88,6 @@ class PostService {
 
     async deletePost(user: Partial<User>, id: string) {
 
-
         const postRepository = getRepository(Post);
 
         const verifyIfIsUuid = validate(id);
