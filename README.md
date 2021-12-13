@@ -227,6 +227,7 @@ token &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&l
 ---
 
 `GET` `/my`
+
 Retorna todas as postagens de um usuario<br/>
 O usuario precisa estar autenticado
 
