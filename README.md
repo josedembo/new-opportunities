@@ -1,13 +1,13 @@
 # new-opportunities
 
-## aplicação de compartilhamento de oportunidades da ária de TI
+## Aplicação de compartilhamento de oportunidades da ária de TI
 
 [![GitHub issues](https://img.shields.io/github/issues/josedembo/new-opportunities)](https://github.com/josedembo/new-opportunities/issues)
 [![GitHub forks](https://img.shields.io/github/forks/josedembo/new-opportunities)](https://github.com/josedembo/new-opportunities/network)
 [![GitHub stars](https://img.shields.io/github/stars/josedembo/new-opportunities)](https://github.com/josedembo/new-opportunities/stargazers)
 [![GitHub license](https://img.shields.io/github/license/josedembo/new-opportunities)](https://github.com/josedembo/new-opportunities/blob/main/LICENSE)
 
-O new-opportunities é uma aplicação dedica ao compartilhando de oportunidades na ária de TI através de vários tipos de postagens como, cursos de formação total ou parciamente financiados, oportunidades de emprego, e demais oportunidades da ária de TI.
+O new-opportunities é uma aplicação dedica ao compartilhamento de oportunidades na ária de TI através de vários tipos de postagens como, cursos de formação total ou parciamente financiados, oportunidades de emprego, e demais oportunidades da ária de TI.
 
 Tabela de conteúdos
 =================
@@ -149,7 +149,7 @@ Authorization  <span style="color:gray"> &ensp;&ensp;&ensp;&ensp;Bearer Token<sp
 
 token &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&lt;token&gt;
 
-
+---
 
 # Autor
 ---
