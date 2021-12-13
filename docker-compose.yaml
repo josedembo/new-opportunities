@@ -1,13 +1,20 @@
-version: '3.1'
-
+version: '3'
 services:
   db:
-    container_name: dio
-    image: postgres
-    restart: always
-    ports:
-      - 5432:5432
+    image: 'postgres:latest'
     environment:
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: rocketseat
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
       POSTGRES_DB: dowhile
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+  app:
+    container_name: new-opportunities-app
+    restart: always
+    build: .
+    ports:
+      - "3333:3333"
+    depends_on:
+      - db
