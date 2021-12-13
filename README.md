@@ -151,6 +151,68 @@ token &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&l
 
 ---
 
+## Post
+
+##### `POST` 
+
+```cURL
+http://localhost:3333/posts
+```
+thorization  <span style="color:gray"> &ensp;&ensp;&ensp;&ensp;Bearer Token<span>
+
+token &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&lt;token&gt;
+
+ Body 
+ ```Json
+{	
+	"title":"Programa bolsas de estudo  potencia Tech",
+	"type":"100% financeada",
+	"description":"O programa de bolsas é patrocinado por todas as empresas parceiras do DoWhile, e seu objetivo é dar oportunidade para aqueles que querem transformar suas carreiras e alcançar as melhores oportunidades, principalmente dentro das próprias empresas parceiras 🚀."
+}
+```
+---
+##### `PUT` 
+
+```cURL
+http://localhost:3333/posts/810a74a9-2a20-48b7-8af4-dace58076508
+```
+
+Authorization  <span style="color:gray"> &ensp;&ensp;&ensp;&ensp;Bearer Token<span>
+
+token &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&lt;token&gt;
+
+ Body 
+ ```Json
+{	
+	"title":"Programa de bolsas de estudo  potência Tech  e rocketseat 🚀"
+}
+```
+---
+`GET` `/getAll`
+
+``` 
+http://localhost:3333/posts
+```
+
+Authorization  <span style="color:gray"> &ensp;&ensp;&ensp;&ensp;Bearer Token<span>
+
+token &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&lt;token&gt;
+
+---
+
+`GET` `/getMy`
+
+``` 
+http://localhost:3333/posts/my
+```
+
+Authorization  <span style="color:gray"> &ensp;&ensp;&ensp;&ensp;Bearer Token<span>
+
+token &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&lt;token&gt;
+
+---
+
+
 # Autor
 ---
 
