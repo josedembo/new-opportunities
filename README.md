@@ -117,16 +117,17 @@ http://localhost:3333/users/c23c6e00-c496-4fad-b97d-11d882f92954
 
 Authorization  <span style="color:gray"> &ensp;&ensp;&ensp;&ensp;Bearer Token<span>
 
-token &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&lt;toke&gt;
+token &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&lt;token&gt;
 
  Body 
  ```Json
+ {
    "name":"José Augustinho",
-	"email":"augustinho12@hotmail.com",
+   "email":"augustinho12@hotmail.com",
 }
 ```
- 
-##### <span style="color:green"> GET </span> `getAll`
+---
+`GET` `/getAll`
 
 ``` 
 http://localhost:3333/users
@@ -134,9 +135,11 @@ http://localhost:3333/users
 
 Authorization  <span style="color:gray"> &ensp;&ensp;&ensp;&ensp;Bearer Token<span>
 
-token &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&lt;toke&gt;
+token &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&lt;token&gt;
 
-##### <span style="color:green"> GET </span>  `getOne`
+---
+
+`GET`  `/getOne`
 
 ```cURL
 http://localhost:3333/users/c23c6e00-c496-4fad-b97d-11d882f92954
@@ -144,7 +147,7 @@ http://localhost:3333/users/c23c6e00-c496-4fad-b97d-11d882f92954
 
 Authorization  <span style="color:gray"> &ensp;&ensp;&ensp;&ensp;Bearer Token<span>
 
-token &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&lt;toke&gt;
+token &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&lt;token&gt;
 
 
 
