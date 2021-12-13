@@ -4,6 +4,7 @@ import { userAuthentication } from "../middlewares/userAuthentiation";
 
 import { createPostController } from "../useCases/post/create";
 import { updatePostController } from "../useCases/post/update";
+import { getAllPostsController } from "../useCases/post/getAll";
 
 
 const postRoutes = Router();
@@ -15,7 +16,7 @@ postRoutes.use(userAuthentication);
 postRoutes.post("/", createPostController.handle);
 postRoutes.put("/:id", updatePostController.handle)
 postRoutes.get("/my", postController.getMyPosts);
-postRoutes.get("/", postController.getAllPosts)
+postRoutes.get("/", getAllPostsController.handle)
 postRoutes.delete("/:id", postController.deletePost)
 
 
