@@ -20,6 +20,8 @@ Tabela de conteúdos
       * [Rodando a aplicação](#rodando-o-back-end)
    * [Tecnologias](#tecnologias)
    * [new-opportunities API ](#new-opportunities-API)
+     * [User](#user)
+     * [Post](#post)
    * [Autor](#autor)
 <!--te-->
 
@@ -188,7 +190,7 @@ token &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&l
 }
 ```
 ---
-`GET` `/getAll`
+`GET`
 
 ``` 
 http://localhost:3333/posts
@@ -200,7 +202,7 @@ token &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&l
 
 ---
 
-`GET` `/getMy`
+`GET` `/my`
 
 ``` 
 http://localhost:3333/posts/my
