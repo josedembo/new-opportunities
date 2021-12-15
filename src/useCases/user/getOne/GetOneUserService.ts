@@ -1,8 +1,8 @@
-import { getRepository } from "typeorm";
+import { getRepository, getCustomRepository } from "typeorm";
 import { validate } from "uuid";
 import { User } from "../../../entity/User";
 import { AppError } from "../../../model/errors/AppErros";
-
+import { UsersRepositories } from "../../../repositories/UserRepositories";
 
 interface IReturn {
     id: string
@@ -15,7 +15,7 @@ class GetOneUserService {
 
     async execute(id: string): Promise<IReturn> {
 
-        const userRepository = getRepository(User);
+        const userRepository = getCustomRepository(UsersRepositories);
 
         const verifyIfIsUuid = validate(id);
 

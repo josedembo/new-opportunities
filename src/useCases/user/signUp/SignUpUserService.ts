@@ -1,10 +1,11 @@
-import { getRepository } from "typeorm";
+import { getCustomRepository, getRepository } from "typeorm";
 import { User } from "../../../entity/User";
 import { AppError } from "../../../model/errors/AppErros";
 import { UserSignUpDTO } from "../dtos/UserSignUp";
 import cryptoJs from "crypto-js";
 import Jwtconfig from "../../../config/auth";
 import { sign } from "jsonwebtoken";
+import { UsersRepositories } from "../../../repositories/UserRepositories";
 
 interface IReturn {
     id: string
@@ -15,7 +16,7 @@ class SignUpUserService {
 
     async execute(user: UserSignUpDTO): Promise<IReturn> {
 
-        const userRepository = getRepository(User);
+        const userRepository = getCustomRepository(UsersRepositories);
 
         const existsUser = await userRepository.findOne({ where: { email: user.email } });
 

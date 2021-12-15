@@ -2,8 +2,9 @@ import { NextFunction, Request, Response } from "express";
 import { AppError } from "../model/errors/AppErros";
 import { verify } from "jsonwebtoken";
 import jwtConfig from "../config/auth";
-import { getRepository } from "typeorm";
-import { User } from "../entity/User"
+import { getCustomRepository, getRepository } from "typeorm";
+import { User } from "../entity/User";
+import { UsersRepositories } from "../repositories/UserRepositories";
 
 interface ItokenPayload {
     name: string;
@@ -44,7 +45,7 @@ async function userAuthentication(request: Request, response: Response, next: Ne
             email
         }
 
-        const userRepository = getRepository(User);
+        const userRepository = getCustomRepository(UsersRepositories);
 
         const verifyIfUserExists = await userRepository.find({ where: { id: user.id } });
 
