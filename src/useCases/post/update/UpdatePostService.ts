@@ -1,13 +1,14 @@
-import { getRepository } from "typeorm";
+import { getCustomRepository, getRepository } from "typeorm";
 import { validate } from "uuid";
 import { Post } from "../../../entity/Post";
 import { User } from "../../../entity/User";
 import { AppError } from "../../../model/errors/AppErros";
+import { PostsRepositories } from "../../../repositories/PostRepositories";
 
 class UpdatePostService {
 
     async execute(post: Partial<Post>, user: Partial<User>, id: string): Promise<Post[]> {
-        const postRepository = getRepository(Post);
+        const postRepository = getCustomRepository(PostsRepositories);
 
         const verifyIfIsUuid = validate(id);
 

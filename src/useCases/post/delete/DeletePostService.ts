@@ -1,13 +1,14 @@
-import { getRepository } from "typeorm";
+import { getCustomRepository, getRepository } from "typeorm";
 import { validate } from "uuid";
 import { Post } from "../../../entity/Post";
 import { User } from "../../../entity/User";
 import { AppError } from "../../../model/errors/AppErros";
+import { PostsRepositories } from "../../../repositories/PostRepositories";
 
 class DeletePostService {
 
     async execute(user: Partial<User>, id: string): Promise<void> {
-        const postRepository = getRepository(Post);
+        const postRepository = getCustomRepository(PostsRepositories);
 
         const verifyIfIsUuid = validate(id);
 

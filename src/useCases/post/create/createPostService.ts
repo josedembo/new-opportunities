@@ -1,6 +1,7 @@
-import { getRepository } from "typeorm";
+import { getCustomRepository, getRepository } from "typeorm";
 import { Post } from "../../../entity/Post";
 import { User } from "../../../entity/User";
+import { PostsRepositories } from "../../../repositories/PostRepositories";
 
 
 interface IPostRequest {
@@ -12,7 +13,7 @@ interface IPostRequest {
 class CreatePostService {
 
     async execute({ title, type, description }: IPostRequest, user: Partial<User>): Promise<Post> {
-        const postRepository = getRepository(Post);
+        const postRepository = getCustomRepository(PostsRepositories);
 
         const postData = {
             user,
