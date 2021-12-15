@@ -17,7 +17,7 @@ Tabela de conteúdos
    * [Como rodar o projeto](#como-rodar-o-projeto)
       * [Pre Requisitos](#pré-requisitos)
       * [dependecias](#dependecias)
-      * [Rodando a aplicação](#rodando-o-back-end)
+      * [Rodando a aplicação](#rodando-a-aplicação)
    * [Tecnologias](#tecnologias)
    * [new-opportunities API ](#new-opportunities-API)
      * [User](#user)
@@ -34,6 +34,8 @@ Antes de começar a rodar o projeto, você vai precisar instalar em sua máquina
 
 Após isso é recomendável a instalação de um editor de código(caso não tenha), como o [VSCode](https://code.visualstudio.com/)
 
+Posterirormente após fazer o clone do repositório crie uma arquivo `.env` com a variavel de ambiente de nome `JWT_SECRET`, fincando nesse formato `JWT_SECRET=<valor da variavel>`, o valor da variavel pode ser qualquer , pode gerar uma hash [aqui](https://www.md5hashgenerator.com/) para ser o valor da variável
+
 ### dependências
 <!--ts-->
    * [pacotes](#dependencias)
@@ -49,7 +51,7 @@ Após isso é recomendável a instalação de um editor de código(caso não ten
 <!--te-->
 para ver a versões de cada pacote acesse o [package.json](package.json) do projeto
 
-### Rodando o Back End
+### Rodando a aplicação
 
 ```bash
 # Clone este repositório
@@ -59,9 +61,12 @@ $ git clone <https://github.com/josedembo/new-opportunities>
 $ cd new-opportunities
 
 # Instale as dependências(pode usar qualquel uma das opções abaixo)
+$ yarn
 $ npm install  
-$ yarn 
- 
+
+#caso tenha o postgres instalado cria o database com o nome dowhile a seguir roda o comando abaixo
+$ yarn typeorm migration:run
+
 # Execute a aplicação em modo de desenvolvimento
 $ yarn dev
 $ npm run dev
