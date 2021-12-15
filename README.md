@@ -37,6 +37,7 @@ Após isso é recomendável a instalação de um editor de código(caso não ten
 Posterirormente após fazer o clone do repositório crie uma arquivo `.env` com a variavel de ambiente de nome `JWT_SECRET`, fincando nesse formato `JWT_SECRET=<valor da variavel>`, o valor da variavel pode ser qualquer , pode gerar uma hash [aqui](https://www.md5hashgenerator.com/) para ser o valor da variável
 
 ### dependências
+
 <!--ts-->
    * [pacotes](#dependencias)
       * [express](https://expressjs.com/pt-br/)
@@ -49,13 +50,16 @@ Posterirormente após fazer o clone do repositório crie uma arquivo `.env` com 
       * [pg](https://www.npmjs.com/package/pg)
       * [uuid](https://www.npmjs.com/package/uuid)
 <!--te-->
+
 para ver a versões de cada pacote acesse o [package.json](package.json) do projeto
 
 ### Rodando a aplicação
 
+Os comandos podem ser executados com os gerenciadores de pacotes `yarn` ou `npm`
+
 ```bash
 # Clone este repositório
-$ git clone <https://github.com/josedembo/new-opportunities>
+$ git clone https://github.com/josedembo/new-opportunities
 
 # Acesse a pasta do projeto no terminal/cmd
 $ cd new-opportunities
@@ -64,8 +68,12 @@ $ cd new-opportunities
 $ yarn
 $ npm install  
 
-#caso tenha o postgres instalado cria o database com o nome dowhile a seguir roda o comando abaixo
+# caso tenha o potsgres instalado em sua máquina, apenas crie um novo database com o nome <dowhile> e pode pular para o comando seguinte, se não tiver o postgres instaldo em sua máquina mas tiver o docker instalado rode o camando abaixo para rodar um container com o postgres
+$ docker-compose up -d
+
+#rode qualquer uma das opções abaixo para criar as tabelas no banco de dados
 $ yarn typeorm migration:run
+$ npm run typeorm migration:run
 
 # Execute a aplicação em modo de desenvolvimento
 $ yarn dev
@@ -141,7 +149,7 @@ token &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&l
 }
 ```
 ---
-`GET` `/getAll`
+`GET` 
 
 Retorna os dados de todos os usuarios cadastrados<br/>
 O usuario precisa estar autenticado
@@ -156,9 +164,24 @@ token &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&l
 
 ---
 
-`GET`  `/getOne`
+`GET`  
 
 Retorna os dados do usuario logado<br/>
+O usuario precisa estar autenticado e informar o seu id
+
+```cURL
+http://localhost:3333/users/c23c6e00-c496-4fad-b97d-11d882f92954
+```
+
+Authorization  <span style="color:gray"> &ensp;&ensp;&ensp;&ensp;Bearer Token<span>
+
+token &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&lt;token&gt;
+
+---
+
+`DEL`  
+
+Deleta um usuario cadastrado<br/>
 O usuario precisa estar autenticado e informar o seu id
 
 ```cURL
@@ -175,7 +198,8 @@ token &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&l
 
 Rotas das postagens
 
-##### `POST` 
+`POST` 
+
 Cria uma nova postagem <br/>
 O usuario precisa estar autenticado
 
@@ -246,6 +270,21 @@ token &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&l
 
 ---
 
+`DEL`  
+
+Deleta uma postagem do usuario logado<br/>
+O usuario precisa estar autenticado e informar o id da postagem que pretende deletar
+
+```cURL
+http://localhost:3333/posts/810a74a9-2a20-48b7-8af4-dace58076508
+
+```
+
+Authorization  <span style="color:gray"> &ensp;&ensp;&ensp;&ensp;Bearer Token<span>
+
+token &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&lt;token&gt;
+
+---
 
 # Autor
 ---
