@@ -9,6 +9,8 @@ interface IReturn {
     name: string
     username: string
     email: string
+    created_at: Date
+    updated_at: Date
 }
 
 class GetOneUserService {
@@ -33,7 +35,9 @@ class GetOneUserService {
             id: userExists.id,
             name: userExists.name,
             username: userExists.username,
-            email: userExists.email
+            email: userExists.email,
+            created_at: userExists.created_at,
+            updated_at: userExists.updated_at
         }
 
         return userResult;

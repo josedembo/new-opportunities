@@ -8,7 +8,7 @@ class GetAllUserService {
 
         const userRepository = getCustomRepository(UsersRepositories);
 
-        const allUsers = await userRepository.find({ select: ["id", "email", "name", "username"] });
+        const allUsers = await userRepository.find({ select: ["id", "email", "name", "username", "created_at", "updated_at"] });
 
         return allUsers;
     }
