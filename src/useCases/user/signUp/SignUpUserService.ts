@@ -26,12 +26,12 @@ class SignUpUserService {
 
         const PasswordHash = cryptoJs.MD5(user.password).toString();
 
-        const userData = {
+        const userData = userRepository.create({
             name: user.name,
             username: user.username,
             email: user.email,
             password: PasswordHash
-        }
+        })
 
         const userCreated = await userRepository.save(userData);
 
