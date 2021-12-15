@@ -5,15 +5,17 @@ import {
     JoinColumn,
     ManyToOne,
     CreateDateColumn,
-    UpdateDateColumn
+    UpdateDateColumn,
+    PrimaryColumn
 } from "typeorm";
 
 import { User } from "./User";
+import { v4 as uuid } from "uuid";
 
 @Entity("posts")
 class Post {
 
-    @PrimaryGeneratedColumn("uuid")
+    @PrimaryColumn()
     id: string;
 
     @Column()
@@ -34,6 +36,12 @@ class Post {
 
     @UpdateDateColumn()
     updated_at: Date
+
+    constructor() {
+        if (!this.id) {
+            this.id = uuid();
+        }
+    }
 
 }
 

@@ -11,7 +11,6 @@ export class CreatePosts1639531184021 implements MigrationInterface {
                         name: "id",
                         type: "uuid",
                         isPrimary: true,
-                        generationStrategy: "uuid"
 
                     },
                     {
