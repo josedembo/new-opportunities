@@ -10,7 +10,7 @@ import {
 
 import { User } from "./User";
 
-@Entity()
+@Entity("posts")
 class Post {
 
     @PrimaryGeneratedColumn("uuid")

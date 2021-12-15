@@ -1,10 +1,12 @@
 import {
     Entity,
     PrimaryGeneratedColumn,
-    Column
+    Column,
+    CreateDateColumn,
+    UpdateDateColumn
 } from "typeorm";
 
-@Entity()
+@Entity("users")
 class User {
 
     @PrimaryGeneratedColumn("uuid")
@@ -21,6 +23,12 @@ class User {
 
     @Column()
     password: string
+
+    @CreateDateColumn()
+    created_at: Date
+
+    @UpdateDateColumn()
+    updated_at: Date
 
 }
 
