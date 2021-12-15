@@ -149,7 +149,7 @@ token &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&l
 }
 ```
 ---
-`GET` 
+##### `GET` 
 
 Retorna os dados de todos os usuarios cadastrados<br/>
 O usuario precisa estar autenticado
@@ -164,7 +164,7 @@ token &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&l
 
 ---
 
-`GET`  
+##### `GET`  
 
 Retorna os dados do usuario logado<br/>
 O usuario precisa estar autenticado e informar o seu id
@@ -179,7 +179,7 @@ token &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&l
 
 ---
 
-`DEL`  
+##### `DEL`  
 
 Deleta um usuario cadastrado<br/>
 O usuario precisa estar autenticado e informar o seu id
@@ -198,7 +198,7 @@ token &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&l
 
 Rotas das postagens
 
-`POST` 
+##### `POST` 
 
 Cria uma nova postagem <br/>
 O usuario precisa estar autenticado
@@ -239,7 +239,7 @@ token &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&l
 }
 ```
 ---
-`GET`
+##### `GET`
 
 Retorna todas as postagens de todos os usuarios<br/>
 O usuario precisa estar autenticado
@@ -255,7 +255,7 @@ token &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&l
 
 ---
 
-`GET` `/my`
+##### `GET` `/my`
 
 Retorna todas as postagens de um usuario<br/>
 O usuario precisa estar autenticado
@@ -270,7 +270,7 @@ token &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&l
 
 ---
 
-`DEL`  
+##### `DEL`  
 
 Deleta uma postagem do usuario logado<br/>
 O usuario precisa estar autenticado e informar o id da postagem que pretende deletar
