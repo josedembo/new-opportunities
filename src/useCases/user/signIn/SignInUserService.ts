@@ -1,5 +1,4 @@
-import { getCustomRepository, getRepository } from "typeorm";
-import { User } from "../../../entity/User";
+import { getCustomRepository } from "typeorm";
 import { AppError } from "../../../model/errors/AppErros";
 import { UserSignInDTO } from "../dtos/UserSignIn";
 import { sign } from "jsonwebtoken";

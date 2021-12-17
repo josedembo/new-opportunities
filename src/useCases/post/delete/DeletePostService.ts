@@ -1,4 +1,4 @@
-import { getCustomRepository, getRepository } from "typeorm";
+import { getCustomRepository } from "typeorm";
 import { validate } from "uuid";
 import { Post } from "../../../entity/Post";
 import { User } from "../../../entity/User";

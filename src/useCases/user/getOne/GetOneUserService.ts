@@ -1,6 +1,5 @@
-import { getRepository, getCustomRepository } from "typeorm";
+import { getCustomRepository } from "typeorm";
 import { validate } from "uuid";
-import { User } from "../../../entity/User";
 import { AppError } from "../../../model/errors/AppErros";
 import { UsersRepositories } from "../../../repositories/UserRepositories";
 
