@@ -1,4 +1,4 @@
-import { getCustomRepository, getRepository } from "typeorm";
+import { getCustomRepository } from "typeorm";
 import { AppError } from "../../../model/errors/AppErros";
 import { UserSignUpDTO } from "../dtos/UserSignUp";
 import cryptoJs from "crypto-js";
