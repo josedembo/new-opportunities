@@ -30,11 +30,11 @@ Tabela de conteúdos
 ### Pré-requisitos
 
 Antes de começar a rodar o projeto, você vai precisar instalar em sua máquina as seguintes ferramentas:
-[Git](https://git-scm.com) e [Node.js](https://nodejs.org/en/)
+[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/), [postgres](https://www.postgresql.org/download/)  e [docker](https://docs.docker.com/get-docker/)(opcional)
 
 Após isso é recomendável a instalação de um editor de código(caso não tenha), como o [VSCode](https://code.visualstudio.com/)
 
-Posterirormente após fazer o clone do repositório crie uma arquivo `.env` com a variavel de ambiente de nome `JWT_SECRET`, fincando nesse formato `JWT_SECRET=<valor da variavel>`, o valor da variavel pode ser qualquer , pode gerar uma hash [aqui](https://www.md5hashgenerator.com/) para ser o valor da variável
+Posterirormente após fazer o clone do repositório e acessar a pasta new-opportunities crie uma arquivo `.env` com a variavel de ambiente de nome `JWT_SECRET`, ficando nesse formato `JWT_SECRET=<valor da variavel>`, o valor da variavel pode ser qualquer , pode gerar uma hash [aqui](https://www.md5hashgenerator.com/) para ser o valor da variável
 
 ### dependências
 
@@ -70,7 +70,7 @@ Os comandos podem ser executados com os gerenciadores de pacotes `yarn` ou `npm`
 
    `npm install`  
 
-4. #### caso tenha o [potsgres](https://www.postgresql.org/download/) instalado em sua máquina, apenas crie um novo database com o nome `dowhile` e pode pular para o passo 5, se não tiver o postgres instaldo em sua máquina mas tiver o [docker](https://docs.docker.com/get-docker/) instalado rode o camando abaixo para rodar um container com o postgres
+4. #### caso já tenha o [potsgres](https://www.postgresql.org/download/) instalado em sua máquina, crie um novo database com o nome `dowhile` e acesse o arquivo [ormconfig.json](./ormconfig.json) e altere as configurações de `username`e `password` de acordo com as configurações do seu postgres,feito isso, pode pular para o passo 5.Caso não tenha o postgres instalado em sua máquina mas tiver o [docker](https://docs.docker.com/get-docker/) instalado execute o camando abaixo para rodar um container com o postgres
 
    `docker-compose up -d`
 
