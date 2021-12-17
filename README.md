@@ -57,31 +57,36 @@ para ver a versões de cada pacote acesse o [package.json](package.json) do proj
 
 Os comandos podem ser executados com os gerenciadores de pacotes `yarn` ou `npm`
 
-```bash
-# Clone este repositório
-$ git clone https://github.com/josedembo/new-opportunities
 
-# Acesse a pasta do projeto no terminal/cmd
-$ cd new-opportunities
+#### Clone este repositório
+`git clone https://github.com/josedembo/new-opportunities`
 
-# Instale as dependências(pode usar qualquel uma das opções abaixo)
-$ yarn
-$ npm install  
+#### Acesse a pasta do projeto no terminal/cmd
+`cd new-opportunities`
 
-# caso tenha o potsgres instalado em sua máquina, apenas crie um novo database com o nome <dowhile> e pode pular para o comando seguinte, se não tiver o postgres instaldo em sua máquina mas tiver o docker instalado rode o camando abaixo para rodar um container com o postgres
-$ docker-compose up -d
+#### Instale as dependências(pode usar qualquel uma das opções abaixo)
+`yarn`
 
-#rode qualquer uma das opções abaixo para criar as tabelas no banco de dados
-$ yarn typeorm migration:run
-$ npm run typeorm migration:run
+`npm install`  
 
-# Execute a aplicação em modo de desenvolvimento
-$ yarn dev
-$ npm run dev
+#### caso tenha o [potsgres](https://www.postgresql.org/download/) instalado em sua máquina, apenas crie um novo database com o nome `dowhile` e pode pular para o comando seguinte, se não tiver o postgres instaldo em sua máquina mas tiver o [docker](https://docs.docker.com/get-docker/) instalado rode o camando abaixo para rodar um container com o postgres
 
-# O servidor estará rodando  na porta:3333
-# Pode consumir a API usando Insomnia, postman ou qualquer  ferramenta de sua preferência
-```
+`docker-compose up -d`
+
+#### rode qualquer uma das opções abaixo para rodar as migrations e criar as tabelas no banco de dados
+
+`yarn typeorm migration:run`
+`npm run typeorm migration:run`
+
+#### Execute a aplicação em modo de desenvolvimento
+
+`yarn dev`
+
+`npm run dev`
+
+#### O servidor estará rodando  na porta:3333
+#### Pode consumir a API usando [Insomnia](https://insomnia.rest/download), [postman](https://www.postman.com/downloads/##) ou qualquer  ferramenta de sua preferência
+
 
 ## Tecnologias
 As ferramentas abaixo foram usadas para a construção do projeto: 
