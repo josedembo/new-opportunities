@@ -70,7 +70,7 @@ Os comandos podem ser executados com os gerenciadores de pacotes `yarn` ou `npm`
 
    `npm install`  
 
-4. #### caso já tenha o [potsgres](https://www.postgresql.org/download/) instalado em sua máquina, crie um novo database com o nome `dowhile` e acesse o arquivo [ormconfig.json](./ormconfig.json) e altere as configurações de `username`e `password` de acordo com as configurações do seu postgres,feito isso, pode pular para o passo 5.Caso não tenha o postgres instalado em sua máquina mas tiver o [docker](https://docs.docker.com/get-docker/) instalado execute o camando abaixo para rodar um container com o postgres
+4. #### caso já tenha o [potsgres](https://www.postgresql.org/download/) instalado em sua máquina, crie um novo database com o nome `dowhile`, acesse o arquivo [ormconfig.json](./ormconfig.json) e altere as configurações de `username`e `password` de acordo com as configurações do seu postgres,feito isso, pode pular para o passo 5.Caso não tenha o postgres instalado em sua máquina, mas tiver o [docker](https://docs.docker.com/get-docker/) instalado execute o camando abaixo para rodar um container com o postgres
 
    `docker-compose up -d`
 
