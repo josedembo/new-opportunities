@@ -55,36 +55,38 @@ para ver a versões de cada pacote acesse o [package.json](package.json) do proj
 
 ### Rodando a aplicação
 
-Os comandos podem ser executados com os gerenciadores de pacotes `yarn` ou `npm`
+Os comandos podem ser executados com os gerenciadores de pacotes `yarn` ou `npm` no terminal da sua máquina
 
 
-#### Clone este repositório
-`git clone https://github.com/josedembo/new-opportunities`
+1. #### Clone este repositório
+   `git clone https://github.com/josedembo/new-opportunities`
 
-#### Acesse a pasta do projeto no terminal/cmd
-`cd new-opportunities`
+2. #### Acesse a pasta do projeto no terminal/cmd
+   `cd new-opportunities`
 
-#### Instale as dependências(pode usar qualquel uma das opções abaixo)
-`yarn`
+3. #### Instale as dependências(pode usar qualquel uma das opções abaixo)
+ 
+   `yarn`
 
-`npm install`  
+   `npm install`  
 
-#### caso tenha o [potsgres](https://www.postgresql.org/download/) instalado em sua máquina, apenas crie um novo database com o nome `dowhile` e pode pular para o comando seguinte, se não tiver o postgres instaldo em sua máquina mas tiver o [docker](https://docs.docker.com/get-docker/) instalado rode o camando abaixo para rodar um container com o postgres
+4. #### caso tenha o [potsgres](https://www.postgresql.org/download/) instalado em sua máquina, apenas crie um novo database com o nome `dowhile` e pode pular para o passo 5, se não tiver o postgres instaldo em sua máquina mas tiver o [docker](https://docs.docker.com/get-docker/) instalado rode o camando abaixo para rodar um container com o postgres
 
-`docker-compose up -d`
+   `docker-compose up -d`
 
-#### rode qualquer uma das opções abaixo para rodar as migrations e criar as tabelas no banco de dados
+5. #### execute qualquer uma das opções abaixo para rodar as migrations e criar as tabelas no banco de dados
 
-`yarn typeorm migration:run`
-`npm run typeorm migration:run`
+   `yarn typeorm migration:run`
 
-#### Execute a aplicação em modo de desenvolvimento
+   `npm run typeorm migration:run`
 
-`yarn dev`
+6. #### Execute a aplicação em modo de desenvolvimento
 
-`npm run dev`
+   `yarn dev`
 
-#### O servidor estará rodando  na porta:3333
+   `npm run dev`
+
+#### O servidor estará rodando  na porta: 3333
 #### Pode consumir a API usando [Insomnia](https://insomnia.rest/download), [postman](https://www.postman.com/downloads/##) ou qualquer  ferramenta de sua preferência
 
 
